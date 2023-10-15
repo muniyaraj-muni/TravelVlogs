@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "871060718831-vqvj3042siqlfp4q8vreqg0etrfu72o2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelvlogs",
+            "certificate_hash": "5a16d89d93b74d59688f7e52f78baeee9b4b9eff"
+          }
+        },
+        {
           "client_id": "871060718831-3t0jnstih2av994384b89nmdq33ek2j4.apps.googleusercontent.com",
           "client_type": 3
         }

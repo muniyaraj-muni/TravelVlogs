@@ -1,11 +1,27 @@
 package travelvlogs.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.travelvlogs.R
 import com.example.travelvlogs.databinding.ActivityTravelVlogsBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 class TravelVlogsActivity : AppCompatActivity() {
+
+    private val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        if(it.resultCode == RESULT_OK){
+            val data = it.data
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            Toast.makeText(applicationContext,task.result.displayName+task.result.email,Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
 
     private lateinit var binding: ActivityTravelVlogsBinding
@@ -15,10 +31,8 @@ class TravelVlogsActivity : AppCompatActivity() {
         binding = ActivityTravelVlogsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        val transaction = supportFragmentManager.beginTransaction()
-        val fragment = LoginFragment()
-        transaction.replace(R.id.fragment_container,fragment)
-        transaction.commit()
+        binding.signInButton.setOnClickListener {
+            activityResultLauncher.launch(GoogleSignIn.getClient(this,GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build()).signInIntent)
+        }
     }
 }
