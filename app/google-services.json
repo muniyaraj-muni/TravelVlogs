@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "871060718831",
+    "project_id": "travelvlogs-398417",
+    "storage_bucket": "travelvlogs-398417.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871060718831:android:5e706f946873d31a25071a",
+        "android_client_info": {
+          "package_name": "com.example.travelvlogs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871060718831-3t0jnstih2av994384b89nmdq33ek2j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY-kRx4JdwTfHYMQEnuJZ10MZRBQtDnzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871060718831-3t0jnstih2av994384b89nmdq33ek2j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
