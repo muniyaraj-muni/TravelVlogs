@@ -18,7 +18,8 @@ class TravelVlogsActivity : AppCompatActivity() {
         if(it.resultCode == RESULT_OK){
             val data = it.data
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            Toast.makeText(applicationContext,task.result.displayName+task.result.email,Toast.LENGTH_SHORT).show()
+            val intent = Intent(this,MapViewActivity ::class.java)
+            startActivity(intent)
         }
     }
 
